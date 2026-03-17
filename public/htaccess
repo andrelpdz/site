@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Impede que visualizem o conteúdo das pastas
+    Options -Indexes
+
+    # Verifica se o arquivo ou diretório solicitado já existe fisicamente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Se não existir, envia a URL como parâmetro para o index.php
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
