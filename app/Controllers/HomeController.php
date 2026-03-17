@@ -2,13 +2,23 @@
 namespace Controllers;
 
 class HomeController {
-    public function index() {
-        echo "<h1>Bem-vindo ao novo site André LPDZ!</h1>";
-        echo "<p>Este conteúdo está sendo carregado via MVC.</p>";
+    
+    // Função para renderizar a view com header e footer
+    private function view($nomePagina) {
+        require_once "../app/Views/partials/header.php";
+        require_once "../app/Views/安Views/{$nomePagina}.php";
+        require_once "../app/Views/partials/footer.php";
     }
 
-    public function sobre() {
-        echo "<h1>Sobre mim</h1>";
-        echo "<p>Aqui vai a sua biografia e história.</p>";
+    public function index() {
+        $this->view('dev');
+    }
+
+    public function app() {
+        $this->view('app');
+    }
+
+    public function ministerio() {
+        $this->view('ministerio');
     }
 }
