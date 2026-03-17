@@ -6,7 +6,7 @@ class HomeController {
     // Função para renderizar a view com header e footer
     private function view($nomePagina) {
         require_once "../app/Views/partials/header.php";
-        require_once "../app/Views/安Views/{$nomePagina}.php";
+        require_once "../app/Views/{$nomePagina}.php";
         require_once "../app/Views/partials/footer.php";
     }
 
